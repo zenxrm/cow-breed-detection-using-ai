@@ -3,7 +3,7 @@
 A full-stack web application that uses a custom-trained **PyTorch deep learning model** to instantly identify **41 different breeds of Indian cattle and buffalo**.
 The project leverages a **MobileNetV3-Large** architecture and features a futuristic **HUD-style dashboard** with a secure login, analytics, and a dynamic breed information panel.
 
-> *(Note: Replace the URL below with a link to your project screenshot)*
+> DASHBOARD:-
 > ![Dashboard Preview](https://raw.githubusercontent.com/zenxrm/cow-breed-detection-using-ai/refs/heads/main/Screenshot%202025-10-30%20214051.png)
 
 ---
@@ -73,9 +73,11 @@ This ensures the model remains stable, efficient, and generalizes well to unseen
 
 ## 📸 Screenshots
 
-*(Replace with your actual screenshots)*
-![Login Page](https://github.com/zenxrm/cow-breed-detection-using-ai/blob/main/screenshots/login.png)
-![Prediction Result](https://github.com/zenxrm/cow-breed-detection-using-ai/blob/main/screenshots/result.png)
+Login page:-
+![Login Page](https://raw.githubusercontent.com/zenxrm/cow-breed-detection-using-ai/refs/heads/main/Screenshot%202025-10-30%20213520.png)
+
+results/output:-
+![Prediction Result](https://raw.githubusercontent.com/zenxrm/cow-breed-detection-using-ai/refs/heads/main/Screenshot%202025-10-30%20213653.png)
 
 ---
 
