@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI Breed Classification</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar hud-panel">
+            <div class="sidebar-header">
+                <h2>// BREED_ID_SYS</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#classifier" class="nav-item active" data-section="classifier-section">
+                    <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <span>[CLASSIFIER]</span>
+                </a>
+                <a href="#analytics" class="nav-item" data-section="analytics-section">
+                    <svg class="nav-icon" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                    <span>[ANALYTICS]</span>
+                </a>
+                <a href="#logs" class="nav-item" data-section="logs-section">
+                    <svg class="nav-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+                    <span>[LOGS]</span>
+                </a>
+                <a href="#profile" class="nav-item" data-section="profile-section">
+                    <svg class="nav-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>[PROFILE]</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/login" class="nav-item logout-btn">
+                    <svg class="nav-icon" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    <span>[LOGOUT]</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <section id="classifier-section" class="content-section active">
+                <header class="main-header">
+                    <h1>AI Specimen Analysis</h1>
+                    <p>> Ready for image data stream. Awaiting user input...</p>
+                </header>
+                <div class="classifier-container">
+                    <div id="upload-area" class="upload-area hud-panel">
+                        <div class="preview-container">
+                            <img id="image-preview" src="" alt="Image preview" class="hidden"/>
+                            <video id="video-feed" class="hidden" autoplay playsinline muted></video>
+                            <div id="placeholder" class="placeholder">
+                                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7,10 12,15 17,10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                                <p class="placeholder-text">DRAG & DROP FILE OR SELECT INPUT METHOD</p>
+                            </div>
+                        </div>
+                        <button id="analyze-btn" class="analyze-button hidden">[ANALYZE IMAGE]</button>
+                        <div class="controls">
+                            <input type="file" id="upload-btn-hidden" accept="image/*" hidden>
+                            <button id="upload-btn" class="control-button">[BROWSE_FILES]</button>
+                            <button id="camera-btn" class="control-button">[ACTIVATE_CAMERA]</button>
+                        </div>
+                    </div>
+                    <div id="result-area" class="result-area hud-panel">
+                        <h2>// ANALYSIS_RESULT</h2>
+                        <div class="loader hidden"></div>
+                        <div id="result-content" class="hidden">
+                            <p class="breed-label">MATCH_FOUND:</p>
+                            <h3 id="breed-name">---</h3>
+                            <p class="confidence-label">CONFIDENCE_LEVEL:</p>
+                            <div class="confidence-bar-container"><div id="confidence-bar" class="confidence-bar"></div></div>
+                            <p id="confidence-text">0%</p>
+                            
+                            <div id="breed-info-panel" class="breed-info-panel hidden">
+                                <div class="breed-info-text">
+                                    <h4>Origin</h4><p id="breed-info-origin">-</p>
+                                    <h4>Breed Type</h4><p id="breed-info-type">-</p>
+                                    <h4>Milk Production</h4><p id="breed-info-milk">-</p>
+                                    <h4>Milk Fat & SNF</h4><p id="breed-info-fat">-</p>
+                                    <h4>Fertility & Calving</h4><p id="breed-info-fertility">-</p>
+                                    <h4>Feeding Needs</h4><p id="breed-info-feeding">-</p>
+                                    <h4>Disease Resistance</h4><p id="breed-info-disease">-</p>
+                                    <h4>Temperament</h4><p id="breed-info-temperament">-</p>
+                                    <h4>Economic Factors</h4><p id="breed-info-economics">-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="analytics-section" class="content-section hidden">
+                <header class="main-header"><h1>System Analytics</h1><p>> Performance metrics and classification statistics.</p></header>
+                <div class="analytics-grid">
+                    <div class="stat-card hud-panel"><h3>Total Classifications</h3><p id="total-classifications">0</p></div>
+                    <div class="stat-card hud-panel"><h3>Average Confidence</h3><p id="avg-confidence">0%</p></div>
+                    <div class="stat-card hud-panel"><h3>Cow vs. Buffalo</h3><p id="cow-buffalo-ratio">N/A</p></div>
+                    <div class="stat-card hud-panel"><h3>Model Accuracy</h3><p id="model-accuracy">N/A</p></div>
+                    <div class="chart-container hud-panel"><h3>Breed Distribution</h3><canvas id="breed-pie-chart"></canvas></div>
+                    <div class="chart-container hud-panel"><h3>Classifications This Week</h3><canvas id="weekly-chart"></canvas></div>
+                </div>
+            </section>
+            
+            <section id="logs-section" class="content-section hidden">
+                <header class="main-header"><h1>Classification Logs</h1><p>> Audit trail of all system activity.</p></header>
+                <div class="logs-container hud-panel">
+                    <input type="text" id="log-search" class="hud-input" placeholder="Search logs by breed...">
+                    <div id="log-list"></div>
+                </div>
+            </section>
+            
+            <section id="profile-section" class="content-section hidden">
+                <header class="main-header"><h1>User Profile</h1><p>> Agent statistics and settings.</p></header>
+                <div class="profile-container">
+                    <div class="profile-card hud-panel">
+                        <div class="profile-avatar-placeholder">PFP</div>
+                        <h2 id="profile-username">Agent_X</h2>
+                        <p id="profile-email">agent.x@breed-id.system</p>
+                    </div>
+                    <div class="profile-stats hud-panel">
+                        <h3>Your Contribution</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item"><h4>Images Uploaded</h4><p id="uploaded-images">0</p></div>
+                            <div class="stat-item"><h4>Most Frequent</h4><p id="most-frequent">---</p></div>
+                            <div class="stat-item"><h4>Average Confidence</h4><p id="accuracy-seen">0%</p></div>
+                        </div>
+                        <button class="cta-button">Change Passcode</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

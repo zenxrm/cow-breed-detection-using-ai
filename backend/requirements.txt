@@ -1,0 +1,10 @@
+flask
+flask-cors
+torch
+torchvision
+pillow
+tqdm
+timm
+opencv-python
+torch
+torchvision
