@@ -4,7 +4,7 @@ A full-stack web application that uses a custom-trained **PyTorch deep learning 
 The project leverages a **MobileNetV3-Large** architecture and features a futuristic **HUD-style dashboard** with a secure login, analytics, and a dynamic breed information panel.
 
 > *(Note: Replace the URL below with a link to your project screenshot)*
-> ![Dashboard Preview](https://github.com/zenxrm/cow-breed-detection-using-ai/blob/main/screenshots/home.png)
+> ![Dashboard Preview]([https://github.com/zenxrm/cow-breed-detection-using-ai/blob/main/screenshots/home.png](https://github.com/zenxrm/cow-breed-detection-using-ai/blob/main/Screenshot%202025-10-30%20213520.png))
 
 ---
 
