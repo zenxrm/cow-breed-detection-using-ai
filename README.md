@@ -1,4 +1,4 @@
-# 🐄 AI Breed Classifier 🧬
+# 🐄 AI Breed Classifier 🧬:
 
 A full-stack web application that uses a custom-trained **PyTorch deep learning model** to instantly identify **41 different breeds of Indian cattle and buffalo**.
 The project leverages a **MobileNetV3-Large** architecture and features a futuristic **HUD-style dashboard** with a secure login, analytics, and a dynamic breed information panel.
