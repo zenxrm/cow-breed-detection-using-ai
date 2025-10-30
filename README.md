@@ -84,8 +84,10 @@ results/output:-
 ## 🧑‍💻 Author
 
 **Raghav Marwaha**
-🔗 [GitHub](https://github.com/zenxrm) | 💼 AI & ML Enthusiast | 🧠 Deep Learning Explorer
+🔗 [GitHub](https://github.com/zenxrm) ⚡
 
+**Yash Pratab Singh**
+🔗 [GitHub](https://github.com/YASH7110) ⚡
 ---
 
 ## 🪪 License
